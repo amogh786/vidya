@@ -42,8 +42,8 @@ const APP_CONFIG = {
 
   /* ── Swipe thresholds ── */
   swipe: {
-    threshold: 85,
-    flyDistance: 650
+    threshold: 585,
+    flyDistance: 250
   },
 
   /* ── Session (minutes) ── */

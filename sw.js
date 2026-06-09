@@ -3,7 +3,7 @@
    sw.js  |  v3.0.0
    ============================================================ */
 
-const CACHE = 'vidya-v3';
+const CACHE = 'vidya-v4';
 const ASSETS = [
   './',
   './index.html',

@@ -44,7 +44,7 @@ const dataStore = (() => {
     if (_cache[labKey]) return _cache[labKey];
     const url = APP_CONFIG.itemFiles[labKey];
     if (!url) return [];
-    const r = await fetch(url);
+    const r = await fetch(url + '?v=' + Date.now());
     if (!r.ok) throw new Error(`Cannot load ${labKey} items`);
     _cache[labKey] = await r.json();
     return _cache[labKey];
