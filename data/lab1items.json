@@ -1,6 +1,16 @@
 [
   {
-    "code": "Quar-023",
+    "code": "Quar-000",
+    "name": "Quarky Robot",
+    "img": "./data/images/lab/Quarky-Robot.png",
+    "category": "Robotics Component",
+    "domain": "STEM",
+    "price": 2000,
+    "quantity": 1,
+    "description": "Quarky robotic core component unit."
+  },
+  {
+    "code": "Quar-001",
     "name": "Quarky Robot",
     "img": "./data/images/lab/Quarky-Robot.png",
     "category": "Robotics Component",
