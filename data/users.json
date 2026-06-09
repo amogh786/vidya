@@ -18,7 +18,7 @@
     },
     {
       "username": "dvs",
-      "passwordHash": "9e9b4af12de66741bef0a0f2bdcc3f434acf07e83ef8b4c8a85d04b0f4c86731",
+      "passwordHash": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92",
       "role": "school",
       "displayName": "DVS School",
       "avatar": "D",
@@ -52,6 +52,174 @@
             "STEM-034",
             "STEM-105",
             "SFTY-002"
+          ]
+        }
+      }
+    },
+    {
+      "username": "dbs",
+      "passwordHash": "b6d4c98df85f4e3f3960d94db628314aa2a4adc036046f76044b42bc6f92099e",
+      "role": "school",
+      "displayName": "DBS School",
+      "avatar": "B",
+      "color": "#457b9d",
+      "schoolCode": "DBS",
+      "dataFile": "DBS",
+      "labs": {
+        "lab1": {
+          "name": "Electronics Lab",
+          "icon": "fa-bolt",
+          "color": "#457b9d",
+          "image": "lab1",
+          "items": [
+            "Quar-001",
+            "Quar-002",
+            "Quar-003",
+            "Quar-004",
+            "Quar-005",
+            "Quar-006",
+            "Quar-007",
+            "Quar-008",
+            "Quar-009",
+            "Quar-010",
+            "Quar-011",
+            "Quar-012",
+            "Quar-013",
+            "Quar-014",
+            "Quar-015",
+            "Quar-016",
+            "Quar-017",
+            "Quar-018",
+            "Quar-019",
+            "Quar-020",
+            "Quar-021",
+            "Quar-022"
+          ]
+        },
+        "lab2": {
+          "name": "Computer Lab",
+          "icon": "fa-laptop",
+          "color": "#6d4c8f",
+          "image": "lab3",
+          "items": [
+            "COMP-001",
+            "COMP-002",
+            "COMP-003",
+            "COMP-005",
+            "COMP-006",
+            "TOOL-001"
+          ]
+        }
+      }
+    },
+    {
+      "username": "dbs",
+      "passwordHash": "b6d4c98df85f4e3f3960d94db628314aa2a4adc036046f76044b42bc6f92099e",
+      "role": "school",
+      "displayName": "DBS School",
+      "avatar": "B",
+      "color": "#457b9d",
+      "schoolCode": "DBS",
+      "dataFile": "DBS",
+      "labs": {
+        "lab1": {
+          "name": "Electronics Lab",
+          "icon": "fa-bolt",
+          "color": "#457b9d",
+          "image": "lab1",
+          "items": [
+            "Quar-001",
+            "Quar-002",
+            "Quar-003",
+            "Quar-004",
+            "Quar-005",
+            "Quar-006",
+            "Quar-007",
+            "Quar-008",
+            "Quar-009",
+            "Quar-010",
+            "Quar-011",
+            "Quar-012",
+            "Quar-013",
+            "Quar-014",
+            "Quar-015",
+            "Quar-016",
+            "Quar-017",
+            "Quar-018",
+            "Quar-019",
+            "Quar-020",
+            "Quar-021",
+            "Quar-022"
+          ]
+        },
+        "lab2": {
+          "name": "Computer Lab",
+          "icon": "fa-laptop",
+          "color": "#6d4c8f",
+          "image": "lab3",
+          "items": [
+            "COMP-001",
+            "COMP-002",
+            "COMP-003",
+            "COMP-005",
+            "COMP-006",
+            "TOOL-001"
+          ]
+        }
+      }
+    },
+    {
+      "username": "dbs",
+      "passwordHash": "b6d4c98df85f4e3f3960d94db628314aa2a4adc036046f76044b42bc6f92099e",
+      "role": "school",
+      "displayName": "DBS School",
+      "avatar": "B",
+      "color": "#457b9d",
+      "schoolCode": "DBS",
+      "dataFile": "DBS",
+      "labs": {
+        "lab1": {
+          "name": "Electronics Lab",
+          "icon": "fa-bolt",
+          "color": "#457b9d",
+          "image": "lab1",
+          "items": [
+            "Quar-001",
+            "Quar-002",
+            "Quar-003",
+            "Quar-004",
+            "Quar-005",
+            "Quar-006",
+            "Quar-007",
+            "Quar-008",
+            "Quar-009",
+            "Quar-010",
+            "Quar-011",
+            "Quar-012",
+            "Quar-013",
+            "Quar-014",
+            "Quar-015",
+            "Quar-016",
+            "Quar-017",
+            "Quar-018",
+            "Quar-019",
+            "Quar-020",
+            "Quar-021",
+            "Quar-022"
+          ]
+        },
+        "lab2": {
+          "name": "Computer Lab",
+          "icon": "fa-laptop",
+          "color": "#6d4c8f",
+          "image": "lab3",
+          "items": [
+            "COMP-001",
+            "COMP-002",
+            "COMP-003",
+            "COMP-005",
+            "COMP-006",
+            "TOOL-001"
           ]
         }
       }
