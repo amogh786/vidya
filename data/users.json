@@ -58,7 +58,7 @@
     },
     {
       "username": "dbs",
-      "passwordHash": "b6d4c98df85f4e3f3960d94db628314aa2a4adc036046f76044b42bc6f92099e",
+      "passwordHash": "2aec35433b81b9721128dd3d4737c5c7fc765dc8fe820f4414601011c7ace6e9",
       "role": "school",
       "displayName": "DBS School",
       "avatar": "B",
@@ -67,7 +67,7 @@
       "dataFile": "DBS",
       "labs": {
         "lab1": {
-          "name": "Electronics Lab",
+          "name": "Quarky Kit",
           "icon": "fa-bolt",
           "color": "#457b9d",
           "image": "lab1",
@@ -113,17 +113,129 @@
       }
     },
     {
-      "username": "dbs",
-      "passwordHash": "b6d4c98df85f4e3f3960d94db628314aa2a4adc036046f76044b42bc6f92099e",
+      "username": "mush",
+      "passwordHash": "aac3bcc6b9b7da86885db22bb69f0ad547425f9de9662e15bae6deea0e8b27c2",
       "role": "school",
-      "displayName": "DBS School",
-      "avatar": "B",
-      "color": "#457b9d",
-      "schoolCode": "DBS",
-      "dataFile": "DBS",
+      "displayName": "MUSH School",
+      "avatar": "M",
+      "color": "#e9724c",
+      "schoolCode": "MUSH",
+      "dataFile": "MUSH",
       "labs": {
         "lab1": {
-          "name": "Electronics Lab",
+          "name": "Quarky Kit",
+          "icon": "fa-bolt",
+          "color": "#e9724c",
+          "image": "lab1",
+          "items": [
+            "Quar-001",
+            "Quar-002",
+            "Quar-003",
+            "Quar-004",
+            "Quar-005",
+            "Quar-006",
+            "Quar-007",
+            "Quar-008",
+            "Quar-009",
+            "Quar-010",
+            "Quar-011",
+            "Quar-012",
+            "Quar-013",
+            "Quar-014",
+            "Quar-015",
+            "Quar-016",
+            "Quar-017",
+            "Quar-018",
+            "Quar-019",
+            "Quar-020",
+            "Quar-021",
+            "Quar-022"
+          ]
+        },
+        "lab2": {
+          "name": "Computer Lab",
+          "icon": "fa-laptop",
+          "color": "#6d4c8f",
+          "image": "lab3",
+          "items": [
+            "COMP-001",
+            "COMP-002",
+            "COMP-003",
+            "COMP-005",
+            "COMP-006",
+            "TOOL-001"
+          ]
+        }
+      }
+    },
+    {
+      "username": "nuss",
+      "passwordHash": "681b91302a4e9386a019a5590e6f5212fefe5195dff4ad6c239f402b5b0a0872",
+      "role": "school",
+      "displayName": "NUSS School",
+      "avatar": "N",
+      "color": "#2d476d",
+      "schoolCode": "NUSS",
+      "dataFile": "NUSS",
+      "labs": {
+        "lab1": {
+          "name": "Quarky Kit",
+          "icon": "fa-bolt",
+          "color": "#2d476d",
+          "image": "lab1",
+          "items": [
+            "Quar-001",
+            "Quar-002",
+            "Quar-003",
+            "Quar-004",
+            "Quar-005",
+            "Quar-006",
+            "Quar-007",
+            "Quar-008",
+            "Quar-009",
+            "Quar-010",
+            "Quar-011",
+            "Quar-012",
+            "Quar-013",
+            "Quar-014",
+            "Quar-015",
+            "Quar-016",
+            "Quar-017",
+            "Quar-018",
+            "Quar-019",
+            "Quar-020",
+            "Quar-021",
+            "Quar-022"
+          ]
+        },
+        "lab2": {
+          "name": "Computer Lab",
+          "icon": "fa-laptop",
+          "color": "#6d4c8f",
+          "image": "lab3",
+          "items": [
+            "COMP-001",
+            "COMP-002",
+            "COMP-003",
+            "COMP-005",
+            "COMP-006",
+            "TOOL-001"
+          ]
+        }
+      }
+    },
+    {
+      "username": "dms",
+      "passwordHash": "b22de4637ac39bb2bbd37b8e3cf3f7cb2d36c4d5ecd03d1e3f78134dd8a60bc8",
+      "role": "school",
+      "displayName": "DMS School",
+      "avatar": "D",
+      "color": "#457b9d",
+      "schoolCode": "DMS",
+      "dataFile": "DMS",
+      "labs": {
+        "lab1": {
+          "name": "Quarky Kit",
           "icon": "fa-bolt",
           "color": "#457b9d",
           "image": "lab1",
@@ -169,17 +281,17 @@
       }
     },
     {
-      "username": "dbs",
-      "passwordHash": "b6d4c98df85f4e3f3960d94db628314aa2a4adc036046f76044b42bc6f92099e",
+      "username": "tps",
+      "passwordHash": "b22de4637ac39bb2bbd37b8e3cf3f7cb2d36c4d5ecd03d1e3f78134dd8a60bc8",
       "role": "school",
-      "displayName": "DBS School",
-      "avatar": "B",
+      "displayName": "TPS School",
+      "avatar": "T",
       "color": "#457b9d",
-      "schoolCode": "DBS",
-      "dataFile": "DBS",
+      "schoolCode": "DMS",
+      "dataFile": "DMS",
       "labs": {
         "lab1": {
-          "name": "Electronics Lab",
+          "name": "Quarky Kit",
           "icon": "fa-bolt",
           "color": "#457b9d",
           "image": "lab1",
@@ -225,17 +337,409 @@
       }
     },
     {
-      "username": "dbs",
-      "passwordHash": "b6d4c98df85f4e3f3960d94db628314aa2a4adc036046f76044b42bc6f92099e",
+      "username": "dms",
+      "passwordHash": "b22de4637ac39bb2bbd37b8e3cf3f7cb2d36c4d5ecd03d1e3f78134dd8a60bc8",
       "role": "school",
-      "displayName": "DBS School",
-      "avatar": "B",
+      "displayName": "DMS School",
+      "avatar": "D",
       "color": "#457b9d",
-      "schoolCode": "DBS",
-      "dataFile": "DBS",
+      "schoolCode": "DMS",
+      "dataFile": "DMS",
       "labs": {
         "lab1": {
-          "name": "Electronics Lab",
+          "name": "Quarky Kit",
+          "icon": "fa-bolt",
+          "color": "#457b9d",
+          "image": "lab1",
+          "items": [
+            "Quar-001",
+            "Quar-002",
+            "Quar-003",
+            "Quar-004",
+            "Quar-005",
+            "Quar-006",
+            "Quar-007",
+            "Quar-008",
+            "Quar-009",
+            "Quar-010",
+            "Quar-011",
+            "Quar-012",
+            "Quar-013",
+            "Quar-014",
+            "Quar-015",
+            "Quar-016",
+            "Quar-017",
+            "Quar-018",
+            "Quar-019",
+            "Quar-020",
+            "Quar-021",
+            "Quar-022"
+          ]
+        },
+        "lab2": {
+          "name": "Computer Lab",
+          "icon": "fa-laptop",
+          "color": "#6d4c8f",
+          "image": "lab3",
+          "items": [
+            "COMP-001",
+            "COMP-002",
+            "COMP-003",
+            "COMP-005",
+            "COMP-006",
+            "TOOL-001"
+          ]
+        }
+      }
+    },
+    {
+      "username": "dms",
+      "passwordHash": "b22de4637ac39bb2bbd37b8e3cf3f7cb2d36c4d5ecd03d1e3f78134dd8a60bc8",
+      "role": "school",
+      "displayName": "DMS School",
+      "avatar": "D",
+      "color": "#457b9d",
+      "schoolCode": "DMS",
+      "dataFile": "DMS",
+      "labs": {
+        "lab1": {
+          "name": "Quarky Kit",
+          "icon": "fa-bolt",
+          "color": "#457b9d",
+          "image": "lab1",
+          "items": [
+            "Quar-001",
+            "Quar-002",
+            "Quar-003",
+            "Quar-004",
+            "Quar-005",
+            "Quar-006",
+            "Quar-007",
+            "Quar-008",
+            "Quar-009",
+            "Quar-010",
+            "Quar-011",
+            "Quar-012",
+            "Quar-013",
+            "Quar-014",
+            "Quar-015",
+            "Quar-016",
+            "Quar-017",
+            "Quar-018",
+            "Quar-019",
+            "Quar-020",
+            "Quar-021",
+            "Quar-022"
+          ]
+        },
+        "lab2": {
+          "name": "Computer Lab",
+          "icon": "fa-laptop",
+          "color": "#6d4c8f",
+          "image": "lab3",
+          "items": [
+            "COMP-001",
+            "COMP-002",
+            "COMP-003",
+            "COMP-005",
+            "COMP-006",
+            "TOOL-001"
+          ]
+        }
+      }
+    },
+    {
+      "username": "dms",
+      "passwordHash": "b22de4637ac39bb2bbd37b8e3cf3f7cb2d36c4d5ecd03d1e3f78134dd8a60bc8",
+      "role": "school",
+      "displayName": "DMS School",
+      "avatar": "D",
+      "color": "#457b9d",
+      "schoolCode": "DMS",
+      "dataFile": "DMS",
+      "labs": {
+        "lab1": {
+          "name": "Quarky Kit",
+          "icon": "fa-bolt",
+          "color": "#457b9d",
+          "image": "lab1",
+          "items": [
+            "Quar-001",
+            "Quar-002",
+            "Quar-003",
+            "Quar-004",
+            "Quar-005",
+            "Quar-006",
+            "Quar-007",
+            "Quar-008",
+            "Quar-009",
+            "Quar-010",
+            "Quar-011",
+            "Quar-012",
+            "Quar-013",
+            "Quar-014",
+            "Quar-015",
+            "Quar-016",
+            "Quar-017",
+            "Quar-018",
+            "Quar-019",
+            "Quar-020",
+            "Quar-021",
+            "Quar-022"
+          ]
+        },
+        "lab2": {
+          "name": "Computer Lab",
+          "icon": "fa-laptop",
+          "color": "#6d4c8f",
+          "image": "lab3",
+          "items": [
+            "COMP-001",
+            "COMP-002",
+            "COMP-003",
+            "COMP-005",
+            "COMP-006",
+            "TOOL-001"
+          ]
+        }
+      }
+    },
+    {
+      "username": "dms",
+      "passwordHash": "b22de4637ac39bb2bbd37b8e3cf3f7cb2d36c4d5ecd03d1e3f78134dd8a60bc8",
+      "role": "school",
+      "displayName": "DMS School",
+      "avatar": "D",
+      "color": "#457b9d",
+      "schoolCode": "DMS",
+      "dataFile": "DMS",
+      "labs": {
+        "lab1": {
+          "name": "Quarky Kit",
+          "icon": "fa-bolt",
+          "color": "#457b9d",
+          "image": "lab1",
+          "items": [
+            "Quar-001",
+            "Quar-002",
+            "Quar-003",
+            "Quar-004",
+            "Quar-005",
+            "Quar-006",
+            "Quar-007",
+            "Quar-008",
+            "Quar-009",
+            "Quar-010",
+            "Quar-011",
+            "Quar-012",
+            "Quar-013",
+            "Quar-014",
+            "Quar-015",
+            "Quar-016",
+            "Quar-017",
+            "Quar-018",
+            "Quar-019",
+            "Quar-020",
+            "Quar-021",
+            "Quar-022"
+          ]
+        },
+        "lab2": {
+          "name": "Computer Lab",
+          "icon": "fa-laptop",
+          "color": "#6d4c8f",
+          "image": "lab3",
+          "items": [
+            "COMP-001",
+            "COMP-002",
+            "COMP-003",
+            "COMP-005",
+            "COMP-006",
+            "TOOL-001"
+          ]
+        }
+      }
+    },
+    {
+      "username": "dms",
+      "passwordHash": "b22de4637ac39bb2bbd37b8e3cf3f7cb2d36c4d5ecd03d1e3f78134dd8a60bc8",
+      "role": "school",
+      "displayName": "DMS School",
+      "avatar": "D",
+      "color": "#457b9d",
+      "schoolCode": "DMS",
+      "dataFile": "DMS",
+      "labs": {
+        "lab1": {
+          "name": "Quarky Kit",
+          "icon": "fa-bolt",
+          "color": "#457b9d",
+          "image": "lab1",
+          "items": [
+            "Quar-001",
+            "Quar-002",
+            "Quar-003",
+            "Quar-004",
+            "Quar-005",
+            "Quar-006",
+            "Quar-007",
+            "Quar-008",
+            "Quar-009",
+            "Quar-010",
+            "Quar-011",
+            "Quar-012",
+            "Quar-013",
+            "Quar-014",
+            "Quar-015",
+            "Quar-016",
+            "Quar-017",
+            "Quar-018",
+            "Quar-019",
+            "Quar-020",
+            "Quar-021",
+            "Quar-022"
+          ]
+        },
+        "lab2": {
+          "name": "Computer Lab",
+          "icon": "fa-laptop",
+          "color": "#6d4c8f",
+          "image": "lab3",
+          "items": [
+            "COMP-001",
+            "COMP-002",
+            "COMP-003",
+            "COMP-005",
+            "COMP-006",
+            "TOOL-001"
+          ]
+        }
+      }
+    },
+    {
+      "username": "dms",
+      "passwordHash": "b22de4637ac39bb2bbd37b8e3cf3f7cb2d36c4d5ecd03d1e3f78134dd8a60bc8",
+      "role": "school",
+      "displayName": "DMS School",
+      "avatar": "D",
+      "color": "#457b9d",
+      "schoolCode": "DMS",
+      "dataFile": "DMS",
+      "labs": {
+        "lab1": {
+          "name": "Quarky Kit",
+          "icon": "fa-bolt",
+          "color": "#457b9d",
+          "image": "lab1",
+          "items": [
+            "Quar-001",
+            "Quar-002",
+            "Quar-003",
+            "Quar-004",
+            "Quar-005",
+            "Quar-006",
+            "Quar-007",
+            "Quar-008",
+            "Quar-009",
+            "Quar-010",
+            "Quar-011",
+            "Quar-012",
+            "Quar-013",
+            "Quar-014",
+            "Quar-015",
+            "Quar-016",
+            "Quar-017",
+            "Quar-018",
+            "Quar-019",
+            "Quar-020",
+            "Quar-021",
+            "Quar-022"
+          ]
+        },
+        "lab2": {
+          "name": "Computer Lab",
+          "icon": "fa-laptop",
+          "color": "#6d4c8f",
+          "image": "lab3",
+          "items": [
+            "COMP-001",
+            "COMP-002",
+            "COMP-003",
+            "COMP-005",
+            "COMP-006",
+            "TOOL-001"
+          ]
+        }
+      }
+    },
+    {
+      "username": "dms",
+      "passwordHash": "b22de4637ac39bb2bbd37b8e3cf3f7cb2d36c4d5ecd03d1e3f78134dd8a60bc8",
+      "role": "school",
+      "displayName": "DMS School",
+      "avatar": "D",
+      "color": "#457b9d",
+      "schoolCode": "DMS",
+      "dataFile": "DMS",
+      "labs": {
+        "lab1": {
+          "name": "Quarky Kit",
+          "icon": "fa-bolt",
+          "color": "#457b9d",
+          "image": "lab1",
+          "items": [
+            "Quar-001",
+            "Quar-002",
+            "Quar-003",
+            "Quar-004",
+            "Quar-005",
+            "Quar-006",
+            "Quar-007",
+            "Quar-008",
+            "Quar-009",
+            "Quar-010",
+            "Quar-011",
+            "Quar-012",
+            "Quar-013",
+            "Quar-014",
+            "Quar-015",
+            "Quar-016",
+            "Quar-017",
+            "Quar-018",
+            "Quar-019",
+            "Quar-020",
+            "Quar-021",
+            "Quar-022"
+          ]
+        },
+        "lab2": {
+          "name": "Computer Lab",
+          "icon": "fa-laptop",
+          "color": "#6d4c8f",
+          "image": "lab3",
+          "items": [
+            "COMP-001",
+            "COMP-002",
+            "COMP-003",
+            "COMP-005",
+            "COMP-006",
+            "TOOL-001"
+          ]
+        }
+      }
+    },
+    {
+      "username": "dms",
+      "passwordHash": "b22de4637ac39bb2bbd37b8e3cf3f7cb2d36c4d5ecd03d1e3f78134dd8a60bc8",
+      "role": "school",
+      "displayName": "DMS School",
+      "avatar": "D",
+      "color": "#457b9d",
+      "schoolCode": "DMS",
+      "dataFile": "DMS",
+      "labs": {
+        "lab1": {
+          "name": "Quarky Kit",
           "icon": "fa-bolt",
           "color": "#457b9d",
           "image": "lab1",
