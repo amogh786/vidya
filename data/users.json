@@ -913,14 +913,14 @@
       }
     },
     {
-      "username": "RGVM",
+      "username": "RGV",
       "passwordHash": "1f4feb4c3422e13a9f942b8db7216ca32472c6b5a92e6668c75a251f3f9a2cba",
       "role": "school",
-      "displayName": "RGVM School",
+      "displayName": "RGV School",
       "avatar": "R",
       "color": "#457b9d",
-      "schoolCode": "RGVM",
-      "dataFile": "RGVM",
+      "schoolCode": "RGV",
+      "dataFile": "RGV",
       "labs": {
         "lab1": {
           "name": "Quarky Kit",
