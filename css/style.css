@@ -173,7 +173,14 @@ img { max-width: 100%; display: block; }
   padding: 13px 14px 13px 40px;
   transition: border-color 0.2s, box-shadow 0.2s;
   outline: none;
+  appearance: none;
   -webkit-appearance: none;
+}
+select.form-input {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
 }
 .form-input:focus {
   border-color: var(--accent);

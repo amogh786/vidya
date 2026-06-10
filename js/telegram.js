@@ -34,6 +34,7 @@ const telegramBot = (() => {
     return [
       `📋 *AUDIT REPORT*`,
       `🏫 ${meta.school || meta.user} — ${meta.labName}`,
+      meta.teacher ? `👨‍🏫 Teacher: *${meta.teacher}*` : '',
       `🕐 ${dateStr}`,
       ``,
       `✅ Present: ${present}/${total} (${pct}%)`,
@@ -41,7 +42,7 @@ const telegramBot = (() => {
       `🔴 Missing: ${missing}`,
       ``,
       issues ? `*Issues:*\n${issues}` : `*No issues found* 🎉`
-    ].join('\n');
+    ].filter(Boolean).join('\n');
   }
 
   /* ── Send via Telegram Bot API ── */

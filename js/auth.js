@@ -23,14 +23,14 @@ const auth = (() => {
   }
 
   /* ── Simple HMAC-like session token ── */
-  function makeToken(username, role, ts) {
-    return btoa(`${username}|${role}|${ts}|${navigator.userAgent.slice(0,20)}`);
+  function makeToken(username, role, ts, teacher = '') {
+    return btoa(`${username}|${role}|${ts}|${teacher}|${navigator.userAgent.slice(0,20)}`);
   }
 
   function parseToken(token) {
     try {
       const parts = atob(token).split('|');
-      return { username: parts[0], role: parts[1], ts: Number(parts[2]) };
+      return { username: parts[0], role: parts[1], ts: Number(parts[2]), teacher: parts[3] || '' };
     } catch { return null; }
   }
 
@@ -67,7 +67,11 @@ const auth = (() => {
       if (!_usersCache) return null;
       const session = this.currentUser();
       if (!session) return null;
-      return _usersCache.find(u => u.username === session.username) || null;
+      const u = _usersCache.find(u => u.username.toLowerCase() === session.username.toLowerCase()) || null;
+      if (u && session.teacher) {
+        return { ...u, teacher: session.teacher };
+      }
+      return u;
     },
 
     /* Returns remaining lockout seconds, or 0 */
@@ -76,8 +80,17 @@ const auth = (() => {
       return Math.max(0, Math.ceil((until - Date.now()) / 1000));
     },
 
+    getUser: async function (username) {
+      const users = await loadUsers();
+      return users.find(u => u.username.toLowerCase() === username.toLowerCase()) || null;
+    },
+
+    preLoadUsers: async function () {
+      return loadUsers();
+    },
+
     /* Attempt login. Returns {ok, error?, user?} */
-    login: async function (username, password) {
+    login: async function (username, password, teacherName = '') {
       // Check lockout
       const rem = this.lockoutRemaining();
       if (rem > 0) {
@@ -106,9 +119,9 @@ const auth = (() => {
       localStorage.removeItem(ATTEMPT_KEY);
       localStorage.removeItem(LOCKOUT_KEY);
       const ts    = Date.now();
-      const token = makeToken(user.username, user.role, ts);
+      const token = makeToken(user.username, user.role, ts, teacherName);
       sessionStorage.setItem(SESSION_KEY, token);
-      return { ok: true, user };
+      return { ok: true, user: teacherName ? { ...user, teacher: teacherName } : user };
     },
 
     logout: function () {

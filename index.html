@@ -48,6 +48,17 @@
           </div>
         </div>
 
+        <div class="form-group" id="teacher-group" style="display: none;">
+          <label class="form-label" for="login-teacher">Teacher Name</label>
+          <div class="input-wrap">
+            <i class="fi fa-solid fa-chalkboard-user"></i>
+            <select class="form-input" id="login-teacher">
+              <option value="">Select Teacher</option>
+            </select>
+            <i class="fa-solid fa-chevron-down" style="position: absolute; right: 14px; top: 50%; transform: translateY(-50%); color: var(--text-3); pointer-events: none; font-size: 12px;"></i>
+          </div>
+        </div>
+
         <div class="form-group">
           <label class="form-label" for="login-password">Password</label>
           <div class="input-wrap">
@@ -174,6 +185,7 @@
       <div class="result-header">
         <h2 id="result-lab">Lab Audit</h2>
         <div class="result-date" id="result-date"></div>
+        <div class="result-auditor" id="result-auditor" style="font-size: 13px; color: var(--accent); margin-top: 4px; font-weight: 600;"></div>
       </div>
 
       <div class="scroll-area">

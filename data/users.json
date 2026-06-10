@@ -120,7 +120,12 @@
             "SDIY-052"
           ]
         }
-      }
+      },
+      "teachers": [
+        "Suma",
+        "Anusha",
+        "Kiran"
+      ]
     },
     {
       "username": "DBS",
@@ -224,7 +229,12 @@
             "SDIY-052"
           ]
         }
-      }
+      },
+      "teachers": [
+        "Bindu",
+        "Suresh",
+        "Meena"
+      ]
     },
     {
       "username": "MUSH",
@@ -328,7 +338,12 @@
             "SDIY-052"
           ]
         }
-      }
+      },
+      "teachers": [
+        "Mamatha",
+        "Girish",
+        "Radha"
+      ]
     },
     {
       "username": "NUSS",
@@ -432,7 +447,12 @@
             "SDIY-052"
           ]
         }
-      }
+      },
+      "teachers": [
+        "Nirmala",
+        "Harish",
+        "Asha"
+      ]
     },
     {
       "username": "KVV",
@@ -536,7 +556,12 @@
             "SDIY-052"
           ]
         }
-      }
+      },
+      "teachers": [
+        "Kavitha",
+        "Vijay",
+        "Sandhya"
+      ]
     },
     {
       "username": "SVVP",
@@ -640,7 +665,12 @@
             "SDIY-052"
           ]
         }
-      }
+      },
+      "teachers": [
+        "Sunitha",
+        "Prasad",
+        "Latha"
+      ]
     },
     {
       "username": "SSVP",
@@ -744,7 +774,12 @@
             "SDIY-052"
           ]
         }
-      }
+      },
+      "teachers": [
+        "Saraswathi",
+        "Venkatesh",
+        "Roopa"
+      ]
     },
     {
       "username": "AVMHS",
@@ -848,7 +883,12 @@
             "SDIY-052"
           ]
         }
-      }
+      },
+      "teachers": [
+        "Asha",
+        "Manjunath",
+        "Sudha"
+      ]
     },
     {
       "username": "DBAS",
@@ -952,7 +992,12 @@
             "SDIY-052"
           ]
         }
-      }
+      },
+      "teachers": [
+        "Deepa",
+        "Bhaskar",
+        "Anand"
+      ]
     },
     {
       "username": "VMT",
@@ -1056,7 +1101,12 @@
             "SDIY-052"
           ]
         }
-      }
+      },
+      "teachers": [
+        "Vani",
+        "Mohan",
+        "Triveni"
+      ]
     },
     {
       "username": "RNHS",
@@ -1160,7 +1210,12 @@
             "SDIY-052"
           ]
         }
-      }
+      },
+      "teachers": [
+        "Rekha",
+        "Naveen",
+        "Hema"
+      ]
     },
     {
       "username": "MAS",
@@ -1264,7 +1319,12 @@
             "SDIY-052"
           ]
         }
-      }
+      },
+      "teachers": [
+        "Mala",
+        "Arun",
+        "Srinivas"
+      ]
     },
     {
       "username": "YVA",
@@ -1368,7 +1428,12 @@
             "SDIY-052"
           ]
         }
-      }
+      },
+      "teachers": [
+        "Yashoda",
+        "Vikas",
+        "Ashok"
+      ]
     },
     {
       "username": "PAJV",
@@ -1472,7 +1537,12 @@
             "SDIY-052"
           ]
         }
-      }
+      },
+      "teachers": [
+        "Prema",
+        "Ananth",
+        "Jyothi"
+      ]
     },
     {
       "username": "ADSA",
@@ -1576,7 +1646,12 @@
             "SDIY-052"
           ]
         }
-      }
+      },
+      "teachers": [
+        "Arpana",
+        "Dinesh",
+        "Sagar"
+      ]
     },
     {
       "username": "MDKS",
@@ -1680,7 +1755,12 @@
             "SDIY-052"
           ]
         }
-      }
+      },
+      "teachers": [
+        "Meera",
+        "Dilip",
+        "Kavya"
+      ]
     },
     {
       "username": "RGV",
@@ -1785,7 +1865,12 @@
             "SDIY-052"
           ]
         }
-      }
+      },
+      "teachers": [
+        "Ragini",
+        "Gopal",
+        "Vidya"
+      ]
     },
     {
       "username": "RMV",
@@ -1889,7 +1974,12 @@
             "SDIY-052"
           ]
         }
-      }
+      },
+      "teachers": [
+        "Rupa",
+        "Mahesh",
+        "Veena"
+      ]
     }
   ],
   "_note": "Passwords: admin=admin@123, subadmin=sub@123, dvs=72C8E609, dbs=DBS@2024. SHA-256 hashed client-side."

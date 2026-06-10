@@ -56,6 +56,7 @@ const exportMgr = (() => {
     <div style="margin-left:auto;text-align:right">
       <div style="font-size:12px;color:#888">${dateStr}</div>
       <div style="font-size:13px;font-weight:600;color:#333">${meta.school || meta.user}</div>
+      ${meta.teacher ? `<div style="font-size:11px;color:#666;font-weight:500;margin-top:2px">Teacher: ${meta.teacher}</div>` : ''}
     </div>
   </div>
 
@@ -143,6 +144,7 @@ const exportMgr = (() => {
       ['School', meta.school || meta.user],
       ['Lab', meta.labName],
       ['Date', d],
+      ['Teacher', meta.teacher || 'N/A'],
       ['Auditor', meta.user],
       [],
       ['#', 'Item Code', 'Status'],

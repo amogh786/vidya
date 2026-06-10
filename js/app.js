@@ -20,6 +20,9 @@ const app = (() => {
   async function boot() {
     await dataStore.init(); // Initialize data store and Firebase
 
+    // Pre-load user database for reactive teacher dropdown
+    auth.preLoadUsers().catch(err => console.error('Error preloading users:', err));
+
     const session = auth.currentUser();
     if (session) {
       const user = auth.currentUserFull();
@@ -32,14 +35,23 @@ const app = (() => {
   async function handleLogin() {
     const uname = document.getElementById('login-username').value.trim();
     const pwd   = document.getElementById('login-password').value;
+    const teacherSelect = document.getElementById('login-teacher');
+    const teacherVal = teacherSelect ? teacherSelect.value : '';
     const btn   = document.getElementById('login-btn');
 
     if (!uname || !pwd) { ui.toast('Enter username and password', 'error'); return; }
 
+    // Validate if teacher is required for this school user
+    const userObj = await auth.getUser(uname);
+    if (userObj && userObj.role === 'school' && !teacherVal) {
+      ui.toast('Please select a teacher name', 'error');
+      return;
+    }
+
     btn.disabled = true;
     btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i>';
 
-    const result = await auth.login(uname, pwd);
+    const result = await auth.login(uname, pwd, teacherVal);
     btn.disabled = false;
     btn.innerHTML = '<span>Sign In</span><i class="fa-solid fa-arrow-right"></i>';
 
@@ -135,7 +147,8 @@ const app = (() => {
         lab:     labKey,
         labName: lab.name,
         ts:      Date.now(),
-        total:   items.length
+        total:   items.length,
+        teacher: user.teacher || ''
       };
 
       swipeEngine.start(items, lab, async (decisions) => {
@@ -174,6 +187,10 @@ const app = (() => {
 
     document.getElementById('result-lab').textContent   = meta.labName;
     document.getElementById('result-date').textContent  = ui.fmtDate(meta.ts);
+    const auditorEl = document.getElementById('result-auditor');
+    if (auditorEl) {
+      auditorEl.textContent = meta.teacher ? `Audited by: ${meta.teacher}` : '';
+    }
     document.getElementById('result-pct').textContent   = pct + '%';
     document.getElementById('result-present').textContent = present;
     document.getElementById('result-broken').textContent  = broken;
@@ -229,7 +246,10 @@ const app = (() => {
         row.innerHTML = `
           <div class="history-row-main">
             <div class="history-row-lab">${a.meta.labName}</div>
-            <div class="history-row-date">${ui.fmtDate(a.meta.ts)}</div>
+            <div class="history-row-date">
+              ${ui.fmtDate(a.meta.ts)}
+              ${a.meta.teacher ? ` · <span style="color:var(--accent);font-weight:600">${a.meta.teacher}</span>` : ''}
+            </div>
           </div>
           <div class="history-row-stats">
             <span class="hpct hpct--${pct>=90?'good':pct>=70?'warn':'bad'}">${pct}%</span>
@@ -288,7 +308,10 @@ const app = (() => {
           </div>
           <div class="asc-pct asc-pct--${pct>=90?'good':pct>=70?'warn':'bad'}">${pct}%</div>
         </div>
-        <div class="asc-last">Last: ${ui.fmtDate(latest.meta.ts)} · ${latest.meta.labName}</div>
+        <div class="asc-last">
+          Last: ${ui.fmtDate(latest.meta.ts)} · ${latest.meta.labName}
+          ${latest.meta.teacher ? ` (${latest.meta.teacher})` : ''}
+        </div>
       `;
       card.onclick = () => renderAdminSchoolDetail(school, audits, user);
       grid.appendChild(card);
@@ -326,7 +349,10 @@ const app = (() => {
         <div class="aas-header">
           <div>
             <div class="aas-lab">${a.meta.labName}</div>
-            <div class="aas-date">${ui.fmtDate(a.meta.ts)}</div>
+            <div class="aas-date">
+              ${ui.fmtDate(a.meta.ts)}
+              ${a.meta.teacher ? ` · <span style="color:var(--accent);font-weight:600">${a.meta.teacher}</span>` : ''}
+            </div>
           </div>
           <div class="aas-actions">
             <button class="icon-btn" onclick="exportMgr.toImage('${a.id}')"><i class="fa-solid fa-image"></i></button>
@@ -365,6 +391,43 @@ const app = (() => {
 /* ── Init on DOM ready ── */
 document.addEventListener('DOMContentLoaded', () => {
   app.boot();
+
+  // Reactive teacher dropdown handler
+  const usernameInput = document.getElementById('login-username');
+  if (usernameInput) {
+    usernameInput.addEventListener('input', async (e) => {
+      const uname = e.target.value.trim();
+      const teacherGroup = document.getElementById('teacher-group');
+      const teacherSelect = document.getElementById('login-teacher');
+      
+      if (!uname) {
+        if (teacherGroup) teacherGroup.style.display = 'none';
+        if (teacherSelect) teacherSelect.innerHTML = '<option value="">Select Teacher</option>';
+        return;
+      }
+      
+      try {
+        const user = await auth.getUser(uname);
+        if (user && user.role === 'school' && user.teachers && user.teachers.length > 0) {
+          if (teacherSelect) {
+            let options = '<option value="">Select Teacher</option>';
+            user.teachers.forEach(t => {
+              options += `<option value="${t}">${t}</option>`;
+            });
+            teacherSelect.innerHTML = options;
+          }
+          if (teacherGroup) {
+            teacherGroup.style.display = 'block';
+          }
+        } else {
+          if (teacherGroup) teacherGroup.style.display = 'none';
+          if (teacherSelect) teacherSelect.innerHTML = '<option value="">Select Teacher</option>';
+        }
+      } catch (err) {
+        console.error('Error loading teachers for user:', err);
+      }
+    });
+  }
 
   // Login form
   document.getElementById('login-btn').addEventListener('click', app.handleLogin);
