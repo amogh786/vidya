@@ -37,6 +37,16 @@ const ui = (() => {
     return '₹' + Number(n).toLocaleString('en-IN');
   }
 
+  /* ── Relative time (e.g. "2h ago", "Just now") ── */
+  function timeAgo(ts) {
+    const sec = Math.floor((Date.now() - ts) / 1000);
+    if (sec < 60)  return 'Just now';
+    if (sec < 3600) return `${Math.floor(sec / 60)}m ago`;
+    if (sec < 86400) return `${Math.floor(sec / 3600)}h ago`;
+    if (sec < 2592000) return `${Math.floor(sec / 86400)}d ago`;
+    return fmtDate(ts);
+  }
+
   /* ── Confirm dialog ── */
   function confirm(msg, cb) {
     const el = document.getElementById('confirm-dialog');
@@ -62,5 +72,5 @@ const ui = (() => {
     return `<span class="status-badge ${cls}"><i class="fa-solid ${icon}"></i> ${label}</span>`;
   }
 
-  return { toast, setLoading, fmtDate, fmtINR, confirm, statusBadge };
+  return { toast, setLoading, fmtDate, fmtINR, timeAgo, confirm, statusBadge };
 })();

@@ -31,6 +31,7 @@
           "icon": "fa-bolt",
           "color": "#457b9d",
           "image": "lab1",
+          "quantity": 4,
           "items": [
             "Quar-001",
             "Quar-002",
@@ -63,6 +64,7 @@
           "icon": "fa-cube",
           "color": "#e76f51",
           "image": "lab2",
+          "quantity": 1,
           "items": [
             "SDIY-001",
             "SDIY-002",
@@ -1310,7 +1312,7 @@
           "name": "Custom Kit",
           "icon": "fa-laptop",
           "color": "#6d4c8f",
-          "image": "lab3",
+          "image": "lab2",
           "items": [
             "SDIY-001",
             "SDIY-002",
@@ -1414,7 +1416,7 @@
           "name": "Custom Kit",
           "icon": "fa-laptop",
           "color": "#6d4c8f",
-          "image": "lab3",
+          "image": "lab2",
           "items": [
             "SDIY-001",
             "SDIY-002",
@@ -1518,7 +1520,7 @@
           "name": "Custom Kit",
           "icon": "fa-laptop",
           "color": "#6d4c8f",
-          "image": "lab3",
+          "image": "lab2",
           "items": [
             "SDIY-001",
             "SDIY-002",
@@ -1692,6 +1694,7 @@
       "labs": {
         "lab1": {
           "name": "Quarky Kit",
+          "quantity": 3,
           "icon": "fa-bolt",
           "color": "#457b9d",
           "image": "lab1",
@@ -1726,7 +1729,7 @@
           "name": "Custom Kit",
           "icon": "fa-laptop",
           "color": "#6d4c8f",
-          "image": "lab3",
+          "image": "lab2",
           "items": [
             "SDIY-001",
             "SDIY-002",
@@ -1830,7 +1833,7 @@
           "name": "Custom Kit",
           "icon": "fa-laptop",
           "color": "#6d4c8f",
-          "image": "lab3",
+          "image": "lab2",
           "items": [
             "SDIY-001",
             "SDIY-002",

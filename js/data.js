@@ -21,7 +21,7 @@ const dataStore = (() => {
         window.firebase.initializeApp(APP_CONFIG.firebaseConfig);
       }
       firebaseDB = window.firebase.database();
-      
+
       // Fetch initial data
       const snap = await firebaseDB.ref('audits').once('value');
       dbAudits = snap.val() || {};
@@ -74,14 +74,14 @@ const dataStore = (() => {
       meta,
       results: decisions.map(d => [d.item.code, d.status.charAt(0)])
     };
-    
+
     // Prune old audits (keep last 200 locally)
     const keys = Object.keys(audits);
     if (keys.length > 200) {
       const oldest = keys.sort().slice(0, keys.length - 200);
       oldest.forEach(k => delete audits[k]);
     }
-    
+
     // Update local mirror immediately
     dbAudits = audits;
     localStorage.setItem(AUDIT_KEY, JSON.stringify(dbAudits));
@@ -132,7 +132,7 @@ const dataStore = (() => {
     getAuditsByUser,
     getAllAudits,
     generateAuditId,
-    getItemsByCode: async function(codes, fileKey) {
+    getItemsByCode: async function (codes, fileKey) {
       const all = await _loadFile(fileKey);
       return all.filter(i => codes.includes(i.code));
     }

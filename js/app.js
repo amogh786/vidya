@@ -68,23 +68,42 @@ const app = (() => {
       return;
     }
 
-    // School user – show their labs
+    // School user – show their labs, expanded by quantity
     const labs = user.labs || {};
+
+    // Pull this user's audit history once for last-audit lookup
+    const userAudits = dataStore.getAuditsByUser(user.username);
+
     Object.entries(labs).forEach(([labKey, lab]) => {
-      const card = document.createElement('div');
-      card.className = 'lab-card';
-      card.innerHTML = `
-        <div class="lab-card-banner lab-banner--${labKey}" style="background:${lab.color}22">
-          <i class="fa-solid ${lab.icon}" style="color:${lab.color}"></i>
-        </div>
-        <div class="lab-card-body">
-          <div class="lab-card-title">${lab.name}</div>
-          <div class="lab-card-sub">${lab.items.length} items</div>
-        </div>
-        <div class="lab-card-arrow"><i class="fa-solid fa-chevron-right"></i></div>
-      `;
-      card.onclick = () => startLabAudit(user, labKey, lab);
-      grid.appendChild(card);
+      const qty = (lab.quantity && lab.quantity > 0) ? lab.quantity : 1;
+
+      for (let i = 1; i <= qty; i++) {
+        const kitKey   = qty > 1 ? `${labKey}_kit${i}` : labKey;
+        const kitLabel = qty > 1 ? `${lab.name} #${i}` : lab.name;
+
+        // Find most-recent audit for this specific kit instance
+        const lastAudit = userAudits.find(a => a.meta.lab === kitKey);
+        const lastLine  = lastAudit
+          ? `<i class="fa-regular fa-clock"></i> ${ui.timeAgo(lastAudit.meta.ts)}`
+          : `<i class="fa-regular fa-clock"></i> Not audited yet`;
+
+        const card = document.createElement('div');
+        card.className = 'lab-card';
+        card.innerHTML = `
+          <div class="lab-card-banner lab-banner--${labKey}" style="background:${lab.color}22">
+            <i class="fa-solid ${lab.icon}" style="color:${lab.color}"></i>
+            ${qty > 1 ? `<span class="lab-kit-badge">#${i}</span>` : ''}
+          </div>
+          <div class="lab-card-body">
+            <div class="lab-card-title">${kitLabel}</div>
+            <div class="lab-card-sub">${lab.items.length} items${qty > 1 ? ` · Kit ${i} of ${qty}` : ''}</div>
+            <div class="lab-card-last">${lastLine}</div>
+          </div>
+          <div class="lab-card-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+        `;
+        card.onclick = () => startLabAudit(user, kitKey, { ...lab, name: kitLabel });
+        grid.appendChild(card);
+      }
     });
 
     // Show audit history shortcut
