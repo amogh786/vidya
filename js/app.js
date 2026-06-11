@@ -34,10 +34,10 @@ const app = (() => {
   /* ── Login handler ── */
   async function handleLogin() {
     const uname = document.getElementById('login-username').value.trim();
-    const pwd   = document.getElementById('login-password').value;
+    const pwd = document.getElementById('login-password').value;
     const teacherSelect = document.getElementById('login-teacher');
     const teacherVal = teacherSelect ? teacherSelect.value : '';
-    const btn   = document.getElementById('login-btn');
+    const btn = document.getElementById('login-btn');
 
     if (!uname || !pwd) { ui.toast('Enter username and password', 'error'); return; }
 
@@ -67,9 +67,9 @@ const app = (() => {
 
   /* ── Render home (lab selection) ── */
   function renderHome(user) {
-    document.getElementById('home-user-name').textContent  = user.displayName || user.username;
-    document.getElementById('home-user-role').textContent  = user.role.toUpperCase();
-    document.getElementById('home-avatar').textContent     = user.avatar || user.displayName[0];
+    document.getElementById('home-user-name').textContent = user.displayName || user.username;
+    document.getElementById('home-user-role').textContent = user.role.toUpperCase();
+    document.getElementById('home-avatar').textContent = user.avatar || user.displayName[0];
     document.getElementById('home-avatar').style.background = user.color || '#2a9d8f';
 
     const grid = document.getElementById('lab-grid');
@@ -90,12 +90,12 @@ const app = (() => {
       const qty = (lab.quantity && lab.quantity > 0) ? lab.quantity : 1;
 
       for (let i = 1; i <= qty; i++) {
-        const kitKey   = qty > 1 ? `${labKey}_kit${i}` : labKey;
+        const kitKey = qty > 1 ? `${labKey}_kit${i}` : labKey;
         const kitLabel = qty > 1 ? `${lab.name} #${i}` : lab.name;
 
         // Find most-recent audit for this specific kit instance
         const lastAudit = userAudits.find(a => a.meta.lab === kitKey);
-        const lastLine  = lastAudit
+        const lastLine = lastAudit
           ? `<i class="fa-regular fa-clock"></i> ${ui.timeAgo(lastAudit.meta.ts)}`
           : `<i class="fa-regular fa-clock"></i> Not audited yet`;
 
@@ -142,12 +142,12 @@ const app = (() => {
       if (!items.length) { ui.toast('No items found for this lab', 'error'); return; }
 
       _currentAuditMeta = {
-        user:    user.username,
-        school:  user.schoolCode || user.displayName,
-        lab:     labKey,
+        user: user.username,
+        school: user.schoolCode || user.displayName,
+        lab: labKey,
         labName: lab.name,
-        ts:      Date.now(),
-        total:   items.length,
+        ts: Date.now(),
+        total: items.length,
         teacher: user.teacher || ''
       };
 
@@ -163,7 +163,7 @@ const app = (() => {
 
   /* ── Audit complete callback ── */
   async function onAuditComplete(decisions) {
-    const meta   = _currentAuditMeta;
+    const meta = _currentAuditMeta;
     const auditId = dataStore.generateAuditId(meta.user, meta.lab);
     const results = decisions.map(d => ({ code: d.item.code, status: d.status }));
 
@@ -171,7 +171,7 @@ const app = (() => {
     dataStore.saveAudit(auditId, meta, decisions);
 
     // Push to Telegram (non-blocking)
-    telegramBot.pushAudit(meta, results).catch(() => {});
+    telegramBot.pushAudit(meta, results).catch(() => { });
 
     // Show result summary
     renderAuditResult(auditId, meta, results);
@@ -180,22 +180,22 @@ const app = (() => {
   /* ── Audit result screen ── */
   function renderAuditResult(auditId, meta, results) {
     const present = results.filter(r => r.status === 'Well Present').length;
-    const broken  = results.filter(r => r.status === 'Broken').length;
+    const broken = results.filter(r => r.status === 'Broken').length;
     const missing = results.filter(r => r.status === 'Missing').length;
-    const total   = results.length;
-    const pct     = Math.round((present / total) * 100);
+    const total = results.length;
+    const pct = Math.round((present / total) * 100);
 
-    document.getElementById('result-lab').textContent   = meta.labName;
-    document.getElementById('result-date').textContent  = ui.fmtDate(meta.ts);
+    document.getElementById('result-lab').textContent = meta.labName;
+    document.getElementById('result-date').textContent = ui.fmtDate(meta.ts);
     const auditorEl = document.getElementById('result-auditor');
     if (auditorEl) {
       auditorEl.textContent = meta.teacher ? `Audited by: ${meta.teacher}` : '';
     }
-    document.getElementById('result-pct').textContent   = pct + '%';
+    document.getElementById('result-pct').textContent = pct + '%';
     document.getElementById('result-present').textContent = present;
-    document.getElementById('result-broken').textContent  = broken;
+    document.getElementById('result-broken').textContent = broken;
     document.getElementById('result-missing').textContent = missing;
-    document.getElementById('result-total').textContent   = total;
+    document.getElementById('result-total').textContent = total;
 
     const list = document.getElementById('result-issues');
     list.innerHTML = '';
@@ -224,7 +224,7 @@ const app = (() => {
   /* ── History view ── */
   function renderHistory(user) {
     const audits = dataStore.getAuditsByUser(user.username);
-    const list   = document.getElementById('history-list');
+    const list = document.getElementById('history-list');
     list.innerHTML = '';
 
     document.getElementById('history-back').onclick = () => renderHome(user);
@@ -234,12 +234,12 @@ const app = (() => {
     } else {
       audits.forEach(a => {
         const results = (a.results || []).map(([code, s]) => {
-          const map = {W:'Well Present',B:'Broken',M:'Missing'};
+          const map = { W: 'Well Present', B: 'Broken', M: 'Missing' };
           return { code, status: map[s] || s };
         });
         const present = results.filter(r => r.status === 'Well Present').length;
-        const total   = results.length;
-        const pct     = total ? Math.round((present/total)*100) : 0;
+        const total = results.length;
+        const pct = total ? Math.round((present / total) * 100) : 0;
 
         const row = document.createElement('div');
         row.className = 'history-row';
@@ -252,7 +252,7 @@ const app = (() => {
             </div>
           </div>
           <div class="history-row-stats">
-            <span class="hpct hpct--${pct>=90?'good':pct>=70?'warn':'bad'}">${pct}%</span>
+            <span class="hpct hpct--${pct >= 90 ? 'good' : pct >= 70 ? 'warn' : 'bad'}">${pct}%</span>
             <span class="history-export-btns">
               <button class="icon-btn" title="Export PNG" onclick="exportMgr.toImage('${a.id}')"><i class="fa-solid fa-image"></i></button>
               <button class="icon-btn" title="Export CSV" onclick="exportMgr.toExcel('${a.id}')"><i class="fa-solid fa-file-csv"></i></button>
@@ -290,12 +290,12 @@ const app = (() => {
       audits.sort((a, b) => b.meta.ts - a.meta.ts);
       const latest = audits[0];
       const results = (latest.results || []).map(([code, s]) => {
-        const map = {W:'Well Present',B:'Broken',M:'Missing'};
-        return { code, status: map[s]||s };
+        const map = { W: 'Well Present', B: 'Broken', M: 'Missing' };
+        return { code, status: map[s] || s };
       });
-      const present = results.filter(r => r.status==='Well Present').length;
-      const total   = results.length;
-      const pct     = total ? Math.round((present/total)*100) : 0;
+      const present = results.filter(r => r.status === 'Well Present').length;
+      const total = results.length;
+      const pct = total ? Math.round((present / total) * 100) : 0;
 
       const card = document.createElement('div');
       card.className = 'admin-school-card';
@@ -304,9 +304,9 @@ const app = (() => {
           <div class="asc-avatar">${school[0]}</div>
           <div>
             <div class="asc-name">${school}</div>
-            <div class="asc-sub">${audits.length} audit${audits.length>1?'s':''}</div>
+            <div class="asc-sub">${audits.length} audit${audits.length > 1 ? 's' : ''}</div>
           </div>
-          <div class="asc-pct asc-pct--${pct>=90?'good':pct>=70?'warn':'bad'}">${pct}%</div>
+          <div class="asc-pct asc-pct--${pct >= 90 ? 'good' : pct >= 70 ? 'warn' : 'bad'}">${pct}%</div>
         </div>
         <div class="asc-last">
           Last: ${ui.fmtDate(latest.meta.ts)} · ${latest.meta.labName}
@@ -335,13 +335,13 @@ const app = (() => {
 
     audits.forEach(a => {
       const results = (a.results || []).map(([code, s]) => {
-        const map = {W:'Well Present',B:'Broken',M:'Missing'};
-        return { code, status: map[s]||s };
+        const map = { W: 'Well Present', B: 'Broken', M: 'Missing' };
+        return { code, status: map[s] || s };
       });
-      const present = results.filter(r => r.status==='Well Present').length;
-      const broken  = results.filter(r => r.status==='Broken').length;
-      const missing = results.filter(r => r.status==='Missing').length;
-      const total   = results.length;
+      const present = results.filter(r => r.status === 'Well Present').length;
+      const broken = results.filter(r => r.status === 'Broken').length;
+      const missing = results.filter(r => r.status === 'Missing').length;
+      const total = results.length;
 
       const sec = document.createElement('div');
       sec.className = 'admin-audit-section';
@@ -395,37 +395,41 @@ document.addEventListener('DOMContentLoaded', () => {
   // Reactive teacher dropdown handler
   const usernameInput = document.getElementById('login-username');
   if (usernameInput) {
-    usernameInput.addEventListener('input', async (e) => {
-      const uname = e.target.value.trim();
-      const teacherGroup = document.getElementById('teacher-group');
-      const teacherSelect = document.getElementById('login-teacher');
-      
-      if (!uname) {
-        if (teacherGroup) teacherGroup.style.display = 'none';
-        if (teacherSelect) teacherSelect.innerHTML = '<option value="">Select Teacher</option>';
-        return;
-      }
-      
-      try {
-        const user = await auth.getUser(uname);
-        if (user && user.role === 'school' && user.teachers && user.teachers.length > 0) {
-          if (teacherSelect) {
-            let options = '<option value="">Select Teacher</option>';
-            user.teachers.forEach(t => {
-              options += `<option value="${t}">${t}</option>`;
-            });
-            teacherSelect.innerHTML = options;
-          }
-          if (teacherGroup) {
-            teacherGroup.style.display = 'block';
-          }
-        } else {
+    let _debounceTimer = null;
+    usernameInput.addEventListener('input', (e) => {
+      clearTimeout(_debounceTimer);
+      _debounceTimer = setTimeout(async () => {
+        const uname = e.target.value.trim();
+        const teacherGroup = document.getElementById('teacher-group');
+        const teacherSelect = document.getElementById('login-teacher');
+
+        if (!uname) {
           if (teacherGroup) teacherGroup.style.display = 'none';
           if (teacherSelect) teacherSelect.innerHTML = '<option value="">Select Teacher</option>';
+          return;
         }
-      } catch (err) {
-        console.error('Error loading teachers for user:', err);
-      }
+
+        try {
+          const user = await auth.getUser(uname);
+          if (user && user.role === 'school' && user.teachers && user.teachers.length > 0) {
+            if (teacherSelect) {
+              let options = '<option value="">Select Teacher</option>';
+              user.teachers.forEach(t => {
+                options += `<option value="${t}">${t}</option>`;
+              });
+              teacherSelect.innerHTML = options;
+            }
+            if (teacherGroup) {
+              teacherGroup.style.display = 'block';
+            }
+          } else {
+            if (teacherGroup) teacherGroup.style.display = 'none';
+            if (teacherSelect) teacherSelect.innerHTML = '<option value="">Select Teacher</option>';
+          }
+        } catch (err) {
+          console.error('Error loading teachers for user:', err);
+        }
+      }, 400);
     });
   }
 
@@ -436,7 +440,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Toggle password visibility
-  document.getElementById('toggle-pwd')?.addEventListener('click', function() {
+  document.getElementById('toggle-pwd')?.addEventListener('click', function () {
     const inp = document.getElementById('login-password');
     const isText = inp.type === 'text';
     inp.type = isText ? 'password' : 'text';
@@ -454,6 +458,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Service worker (PWA)
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('./sw.js').catch(() => {});
+    navigator.serviceWorker.register('./sw.js').catch(() => { });
   }
 });
